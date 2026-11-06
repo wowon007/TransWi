@@ -1,14 +1,34 @@
 # TransWi
 
-## News
-- [2025-07-31] Code has been released.
+**A Local-aware Transformer with Window and Dual Attention for Efficient Wireless-based Human Activity Recognition**
 
+📄 **Paper:** Accepted by *IEEE Transactions on Mobile Computing (TMC)*
+
+## News
+
+- **[2026-11]** 🎉 Our paper, "A Local-aware Transformer with Window and Dual Attention for Efficient Wireless-based Human Activity Recognition," has been accepted by **IEEE Transactions on Mobile Computing (TMC)**!
+- **[2025-07-31]** The source code of TransWi has been released.
 
 ## Abstract
-Wireless sensing-based human activity recognition (HAR) is a promising technology for smart home and healthcare applications. Recently, transformer-based HAR methods have attracted significant attention because of their powerful ability to capture long-range dependencies. However, traditional transformer models are often large and computationally inefficient. Moreover, they typically rely on pre-trained word embeddings and ignore local spatial relationships in 2D space, which are crucial in spectrograms and have been proved by convolution-based models. In this paper, we present TransWi, a lightweight transformer model designed for the edge computing scenario. TransWi includes a local-aware fusion mechanism and a window attention block to better capture local spatial features. It also uses a dual attention block to learn both temporal and frequency relationships at the same time. To further improve performance, a custom data augmentation strategy is proposed. Extensive experiments on three public datasets—Widar3.0, GeCro, and ISAC—demonstrate the effectiveness of TransWi, achieving in-domain accuracies of 99.54\%, 97.51\%, and 98.45\%, and out-of-domain accuracies of 93.85\%, 93.21\%, and 97.59\%, respectively. On a Raspberry Pi 5, TransWi-S recognizes activities in just 3.77 ms with 10.13 MB of memory, making it ideal for edge computing. The code will be publicly available at https://anonymous.4open.science/r/TransWi-ADF4.
 
-## Visualization of the Features use T-SNE
+Wireless sensing-based human activity recognition (HAR) is a promising technology for smart home and healthcare applications. Recently, transformer-based HAR methods have attracted increasing attention because of their ability to capture long-range temporal dependencies. However, traditional transformer models are often large and computationally inefficient. In this paper, we present TransWi, a lightweight transformer architecture tailored for wireless spectrogram-based HAR. Specifically, it uses local-aware fusion to pack adjacent temporal tokens into the frequency embedding, thereby reducing temporal redundancy while preserving local motion information. Subsequently, a query-preserving window attention block is introduced to inject local 2D time-frequency priors. Then, it is followed by a dual-attention block that models both temporal and frequency dependencies. Finally, a spectrogram augmentation strategy and feature regularization are adopted to improve out-of-domain generalization within each dataset. Independent evaluations on three public datasets, Widar3.0, GeCro, and ISAC, show that TransWi achieves in-domain accuracies of 99.47\%, 97.64\%, and 98.49\%, and out-of-domain accuracies of 94.12\%, 93.35\%, and 97.73\%, respectively. On a Raspberry Pi 5, TransWi-S recognizes activities in 3.77 ms with only 10.13 MB of memory, demonstrating an effective accuracy-efficiency trade-off for edge computing.
+
+## Visualization of Features Using t-SNE
 
 | **Widar3.0** | **GeCro** | **ISAC** |
 |-------------|-----------|----------|
 | ![TransWi on Widar3.0 Dataset](./images/TransWi_Widar.png) | ![TransWi on GeCro Dataset](./images/TransWi_GeCro.png) | ![TransWi on ISAC Dataset](./images/TransWi_ISAC.png) |
+
+## Citation
+
+If you find TransWi useful in your research, please consider citing our paper:
+
+```bibtex
+@article{transwi2026,
+  title   = {A Local-aware Transformer with Window and Dual Attention for Efficient Wireless-based Human Activity Recognition},
+  author  = {Author Names},
+  journal = {IEEE Transactions on Mobile Computing},
+  year    = {2026},
+}
+```
+
